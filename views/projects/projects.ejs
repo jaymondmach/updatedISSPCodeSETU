@@ -39,6 +39,12 @@
           <p class="text-sm text-gray-600">
             <strong>Description:</strong> <%= project.description %>
           </p>
+          <a
+            href="/assets?projectId=<%= project.id %>"
+            class="block mt-4 bg-green-500 text-white text-center px-4 py-2 rounded-md hover:bg-green-600"
+          >
+            View Assets </a
+          >`
         </div>
         <% }) %> <% } else { %>
         <p class="text-center text-gray-600">No projects yet. Add one!</p>

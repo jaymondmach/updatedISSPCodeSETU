@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <nav class="bg-gray-800 text-white p-4 flex justify-between items-center">
+      <div class="text-2xl font-semibold">SETU TECHNOLOGIES INC</div>
+      <div>
+        <a
+          href="/view-projects"
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+        >
+          Back to Projects
+        </a>
+      </div>
+    </nav>
+
+    <div class="container mx-auto mt-8 px-4 flex-grow">
+      <h1 class="text-3xl font-bold text-center mb-6">
+        Assets for Project <%= projectId %>
+      </h1>
+      <div class="bg-white p-6 rounded-lg shadow-md text-center">
+        <p class="text-gray-700 text-lg">
+          Manage assets for the selected project.
+        </p>
+        <a
+          href="/sensors?projectId=<%= projectId %>"
+          class="mt-4 block bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+        >
+          View Sensors
+        </a>
+      </div>
+    </div>
+
+    <footer class="bg-gray-800 text-white py-4 mt-8 text-center">
+      <p>&copy; 2025 SETU Technologies Inc</p>
+    </footer>
+  </body>
+</html>

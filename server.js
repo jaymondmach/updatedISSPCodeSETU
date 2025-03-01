@@ -6,6 +6,7 @@ const passportConfig = require("./config/passport");
 const bodyParser = require("body-parser");
 const path = require("path");
 const checkAuth = require("./middleware/checkAuth");
+const { v4: uuidv4 } = require("uuid"); // Import UUID for unique IDs
 
 const app = express();
 
@@ -44,8 +45,32 @@ app.get("/add-projects", checkAuth, (req, res) => {
 
 app.post("/add-projects", (req, res) => {
   const { name, date, description } = req.body;
-  projects.push({ name, date, description }); // Store the new project in the array
-  res.redirect("/view-projects"); // Redirect to the projects page
+  const newProject = {
+    id: uuidv4(), // Generate a unique ID
+    name,
+    date,
+    description,
+  };
+  projects.push(newProject); // Store the new project with an ID
+  res.redirect("/view-projects");
+});
+
+// View assets for a project
+app.get("/assets", checkAuth, (req, res) => {
+  const projectId = req.query.projectId;
+  if (!projectId) {
+    return res.status(400).send("Project ID is required.");
+  }
+  res.render("projects/assets", { projectId });
+});
+
+// View sensors for a project
+app.get("/sensors", checkAuth, (req, res) => {
+  const projectId = req.query.projectId;
+  if (!projectId) {
+    return res.status(400).send("Project ID is required.");
+  }
+  res.render("projects/sensors", { projectId });
 });
 
 app.listen(3000, () => {
