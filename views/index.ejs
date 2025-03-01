@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Setu Technologies</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-white text-gray-800 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav
+      class="bg-black text-green-500 p-4 flex justify-between items-center shadow-lg"
+    >
+      <div class="text-2xl font-semibold">SETU TECHNOLOGIES INC</div>
+      <ul class="flex space-x-6">
+        <li>
+          <a href="https://www.setutech.ca" class="hover:text-green-300"
+            >Home</a
+          >
+        </li>
+        <li><a href="/" class="hover:text-green-300">Logout</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero Section (Centered Box) -->
+    <div class="flex-grow flex justify-center items-center py-24 bg-gray-100">
+      <div
+        class="bg-white text-center p-12 rounded-lg shadow-xl max-w-lg w-full border border-gray-300"
+      >
+        <h1 class="text-4xl font-bold text-green-500 mb-4">
+          SETU TECHNOLOGIES INC
+        </h1>
+        <p class="text-xl text-gray-800 mb-6">
+          BUILDING BETTER, SAFER AND GREENER INFRASTRUCTURE
+        </p>
+        <a
+          href="https://www.setutech.ca"
+          class="bg-green-600 text-white px-6 py-3 rounded-lg text-lg hover:bg-green-700 transition duration-300"
+          >www.setutech.ca</a
+        >
+      </div>
+    </div>
+
+    <!-- Grid Container (Centered and Evenly Spaced) -->
+    <div
+      class="container mx-auto mt-12 px-4 grid grid-cols-1 sm:grid-cols-2 gap-6 justify-center"
+    >
+      <a
+        href="/view-projects"
+        class="bg-green-600 text-white text-center py-5 px-6 max-w-xs w-full rounded-lg shadow-lg hover:bg-green-700 transition duration-300 text-lg flex justify-center mx-auto"
+      >
+        View Projects
+      </a>
+      <a
+        href="/add-projects"
+        class="bg-green-600 text-white text-center py-5 px-6 max-w-xs w-full rounded-lg shadow-lg hover:bg-green-700 transition duration-300 text-lg flex justify-center mx-auto"
+      >
+        Add Projects
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-black text-green-500 py-4 text-center mt-8">
+      <p>&copy; 2025 SETU Technologies Inc</p>
+    </footer>
+  </body>
+</html>
