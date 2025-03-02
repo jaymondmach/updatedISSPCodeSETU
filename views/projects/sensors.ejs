@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sensors</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
     <nav class="bg-gray-800 text-white p-4 flex justify-between items-center">
@@ -12,7 +13,7 @@
       <div>
         <a
           href="/assets?projectId=<%= projectId %>"
-          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 transition"
         >
           Back to Assets
         </a>
@@ -27,6 +28,58 @@
         <p class="text-gray-700 text-lg">Manage sensors for this project.</p>
       </div>
     </div>
+
+    <div class="container mx-auto mt-8 px-4 flex flex-col items-center">
+      <h2 class="text-2xl font-semibold mb-4">Data</h2>
+      <div class="chart-container w-full md:w-3/4 lg:w-2/3 xl:w-1/2 h-96">
+        <canvas id="Chart"></canvas>
+      </div>
+    </div>
+
+    <script>
+      // const Data = [
+      //     {x: 1, "adc":119,"position":11.632453567937437},
+      //     {x: 2, "adc":118,"position":11.534701857282501},
+      //     {x: 3, "adc":119,"position":11.632453567937437}
+      // ];
+
+      // const Data = [
+      //     {x: 1, accel_x: 140.05, accel_y: -35.68, accel_z: 1404.15},
+      //     {x: 2, accel_x: 4.02, accel_y: 21.65, accel_z: 985.51},
+      //     {x: 3, accel_x: 5.91, accel_y: 19.7, accel_z: 968.19}
+      // ];
+
+      const Data = [
+        { x: 1, Roll: -1.72, Pitch: -0.49 },
+        { x: 2, Roll: -0.23, Pitch: 0.47 },
+        { x: 3, Roll: 0.22, Pitch: -0.45 },
+      ];
+
+      const keys = Object.keys(Data[0]).filter((key) => key !== "x");
+      const datasets = keys.map((key) => ({
+        label: key,
+        data: Data.map((d) => d[key]),
+        borderColor: getRandomColor(),
+        fill: false,
+      }));
+
+      new Chart(document.getElementById("Chart"), {
+        type: "line",
+        data: {
+          labels: Data.map((d) => d.x),
+          datasets: datasets,
+        },
+      });
+
+      function getRandomColor() {
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        for (let i = 0; i < 6; i++) {
+          color += letters[Math.floor(Math.random() * 16)];
+        }
+        return color;
+      }
+    </script>
 
     <footer class="bg-gray-800 text-white py-4 mt-8 text-center">
       <p>&copy; 2025 SETU Technologies Inc</p>
