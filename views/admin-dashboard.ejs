@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white p-4 flex justify-between items-center">
+      <div class="text-2xl font-semibold">SETU TECHNOLOGIES INC</div>
+      <div>
+        <a
+          href="/"
+          class="bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600"
+          >Logout</a>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mx-auto mt-8 px-4 flex-grow">
+      <h1 class="text-4xl font-semibold text-center mb-6">Admin Dashboard</h1>
+
+      <!-- Manage Users -->
+      <div class="bg-white p-8 rounded-lg shadow-md max-w-4xl mx-auto">
+        <h2 class="text-2xl font-semibold mb-4">Manage Users</h2>
+        <p class="mb-4 text-gray-700">
+          View, edit, or delete user accounts.
+        </p>
+        <a
+          href="/manage-users"
+          class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+          >Go to Manage Users</a
+        >
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-4 mt-8 text-center">
+      <p>&copy; 2025 SETU Technologies Inc</p>
+    </footer>
+  </body>
+</html>
